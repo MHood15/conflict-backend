@@ -48,6 +48,24 @@ public class ConflictController {
         return conflictsByRegion;
     }
 
+    //Gets a conflict by ID
+    @GetMapping("/id/{id}")
+    public Conflict conflictById(@PathVariable Long id){
+        return this.conflictRepo.findById(id).orElseThrow();
+    }
+
+    //Gets a list of conflicts by status
+    @GetMapping("/status/{status}")
+    public List<Conflict> conflictByStatus(@PathVariable String status){
+        return this.conflictRepo.findByStatus(status);
+    }
+
+    //Gets a conflict by name
+    @GetMapping("/name/{name}")
+    public Conflict conflictByName(@PathVariable String name){
+        return this.conflictRepo.findByName(name);
+    }
+
     //Gets a list of all countries
     @GetMapping("/countries")
     public Iterable<Country> allCountries() {

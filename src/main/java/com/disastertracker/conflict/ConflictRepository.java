@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface ConflictRepository extends CrudRepository<Conflict, Long> {
     List<Conflict> findByLocation(String location);
-    List<Conflict> findByCountriesId(Long countryId);
+    List<Conflict> findByStatus(String status);
+    Conflict findByName(String name);
 }
