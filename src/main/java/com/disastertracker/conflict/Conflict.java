@@ -21,6 +21,7 @@ public class Conflict {
     private String displaced;
     private String duration;
     private String status;      //(worsening, improving, unchanging)
+    private String image;
     @JsonManagedReference
     @ManyToMany
     @JoinTable(
@@ -52,6 +53,9 @@ public class Conflict {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public String getImage() { return image; }
+    public void setImage(String image) { this.image = image; }
 
     public List<Country> getCountries() { return countries; }
     public void setCountries(List<Country> countries) { this.countries = countries; }
